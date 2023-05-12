@@ -1,18 +1,27 @@
 # Endpoints
 
-## POST /api/mealbuild
+## GET /api/plannedmeal
+
+-   respondes with all meals
+
+## POST /api/plannedmeal
 
 -   Creates a new meal.
--   Expected body: { meal_name, quantity, product }
+-   Expected body: { title, type}
 
-## POST /api/users/login
+## DELETE /api/plannedmeal
 
--   Generates and responds a JWT for the user to use for future authorization.
--   Expected body: { email, password }
--   Response format: { token: "JWT_TOKEN_HERE" }
+-   Deletes a meal.
 
-## GET /api/users/current
+## GET /api/mealingredient
 
--   Gets information about the currently logged in user.
--   If no valid JWT is provided, this route will respond with 401 Unauthorized.
--   Expected headers: { Authorization: "Bearer JWT_TOKEN_HERE" }
+-   respondes with all ingredients
+
+## POST /api/mealingredient
+
+-   Creates a new ingredient.
+-   Expected body: { quantity, ingredient}
+
+## DELETE /api/mealingredient
+
+-   Deletes an ingredient.
