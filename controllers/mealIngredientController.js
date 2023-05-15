@@ -59,7 +59,7 @@ exports.addMealIngredient = (req, res) => {
   knex('mealIngredient')
     .insert(newMealIngredientObj)
     .then(() => {
-      res.status(201).send(`Meal Ingredient has been added`);
+      res.status(201).json(newMealIngredientObj);
     })
     .catch((err) => res.status(400).send(`Error creating Meal Ingredient: ${err} `));
 };

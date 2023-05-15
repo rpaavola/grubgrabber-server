@@ -44,7 +44,7 @@ exports.addPlannedMeal = (req, res) => {
     knex('plannedMeal')
         .insert(newPlannedMealObj)
         .then(() => {
-            res.status(201).send(`Planned Meal has been added`);
+            res.status(201).json(newPlannedMealObj);
         })
         .catch((err) => res.status(400).send(`Error creating Planned Meal: ${err} `));
 };

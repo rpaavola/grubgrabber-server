@@ -1,8 +1,10 @@
 # Endpoints
 
+## MEALS
+
 ## GET /api/plannedmeal
 
--   respondes with all meals
+-   Gets all planned meals
 
 ## POST /api/plannedmeal
 
@@ -13,15 +15,21 @@
 
 -   Deletes a meal.
 
-## GET /api/mealingredient
+## INGREDIENTS
 
--   respondes with all ingredients
+## GET /api/plannedmeal/:mealID/mealingredient
 
-## POST /api/mealingredient
+-   Gets a meal ingredients
+
+## POST /api/plannedmeal/:mealID/mealingredient
 
 -   Creates a new ingredient.
 -   Expected body: { quantity, ingredient}
 
-## DELETE /api/mealingredient
+## DELETE /api/plannedmeal/:mealID/mealingredient
 
 -   Deletes an ingredient.
+
+## Get /api/mealingredient
+
+ - Get ALL ingredients
