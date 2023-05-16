@@ -64,6 +64,19 @@ exports.addMealIngredient = (req, res) => {
     .catch((err) => res.status(400).send(`Error creating Meal Ingredient: ${err} `));
 };
 
+exports.updateMealIngredient = (req, res) => {
+  const { ingredientId } = req.params
+  knex('mealIngredient')
+    .where({ id: ingredientId })
+    .update(req.body)
+    .then((data) => {
+      res.status(200).json(data);
+    })
+    .catch((err) =>
+      res.status(400).send(`Error retrieving Ingredients: ${err}`)
+    );
+};
+
 exports.putMealIngredient = (req, res) => {
   res.status(500).send('Not an implemented feature as of yet');
 };

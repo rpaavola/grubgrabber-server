@@ -5,7 +5,8 @@ const mealIngredientsController = require('../controllers/mealIngredientControll
 router
     .route('/')
     .get(plannedMealController.getPlannedMeals)
-    .post(plannedMealController.addPlannedMeal);
+    .post(plannedMealController.addPlannedMeal)
+    .delete(plannedMealController.clearPlannedMeals);
 
 router
     .route('/:mealId')
@@ -18,7 +19,7 @@ router
 
 router
     .route('/:mealId/mealIngredients/:ingredientId')
-    .put(mealIngredientsController.putMealIngredient)
+    .put(mealIngredientsController.updateMealIngredient)
     .delete(mealIngredientsController.deleteMealIngredient);
 
 module.exports = router;

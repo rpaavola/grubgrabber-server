@@ -21,6 +21,7 @@ exports.up = function (knex) {
                 .references('plannedMeal.id')
                 .onUpdate('CASCADE')
                 .onDelete('CASCADE');
+            table.boolean('completed').notNullable().defaultTo(false);
             table.timestamp('updated_at').defaultTo(knex.fn.now());
         })
 };

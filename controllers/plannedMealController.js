@@ -25,6 +25,17 @@ exports.deletePlannedMeal = (req, res) => {
         );
 };
 
+exports.clearPlannedMeals = (req, res) => {
+    knex('plannedMeal')
+        .delete()
+        .then(() => {
+            res.status(204).send(`Deleted`);
+        })
+        .catch((err) =>
+            res.status(400).send(`Error deleting: ${err}`)
+        );
+};
+
 exports.addPlannedMeal = (req, res) => {
 
     // validator to check that all fields are filled in

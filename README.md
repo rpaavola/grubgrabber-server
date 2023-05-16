@@ -2,33 +2,41 @@
 
 ## MEALS
 
-## GET /api/plannedmeal
+## GET /api/plannedmeals
 
 -   Gets all planned meals
 
-## POST /api/plannedmeal
+## POST /api/plannedmeals
 
--   Creates a new meal.
+-   Creates a new meal
 -   Expected body: { title, type}
 
-## DELETE /api/plannedmeal
+## DELETE /api/plannedmeals/:mealId
 
--   Deletes a meal.
+-   Deletes a selected meal
+
+ ## DELETE /api/plannedmeals
+
+ -   Deletes ALL meals
 
 ## INGREDIENTS
 
-## GET /api/plannedmeal/:mealID/mealingredient
+## GET /api/plannedmeals/:mealID/mealingredients
 
 -   Gets a meal ingredients
 
-## POST /api/plannedmeal/:mealID/mealingredient
+## POST /api/plannedmeals/:mealID/mealingredients
 
 -   Creates a new ingredient.
 -   Expected body: { quantity, ingredient}
 
-## DELETE /api/plannedmeal/:mealID/mealingredient
+## PUT /api/plannedmeals/:mealID/mealingredients/:ingredientId
 
--   Deletes an ingredient.
+-   Updates status of meal ingredient
+
+## DELETE /api/plannedmeals/:mealID/mealingredients
+
+-   Deletes an ingredient
 
 ## Get /api/mealingredient
 
